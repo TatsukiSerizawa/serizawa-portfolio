@@ -1,3 +1,3 @@
 ポートフォリオ
 
-https://tatsukiserizawa.github.io/github.io/
+https://tatsukiserizawa.github.io/serizawa-portfolio/

@@ -1,0 +1,386 @@
+baseURL: 'https://tatsukiserizawa.github.io/githuub.io/'
+languageCode: "ja"
+theme: hugo-profile
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+  page:
+    - "HTML"
+    - "RSS"
+
+Paginate: 3
+enableRobotsTXT: true
+# disqusShortname: your-disqus-shortname
+# googleAnalytics: G-MEASUREMENT_ID
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+canonifyURLs: true
+
+Menus:
+  main:
+    - identifier: blog
+      name: Blog
+      title: Blog posts
+      url: /blogs
+      weight: 1
+    - identifier: gallery
+      name: Gallery
+      title: Blog posts
+      url: /gallery
+      weight: 2
+    #Dropdown menu
+    # - identifier: dropdown
+    #   title: Example dropdown menu
+    #   name: Dropdown
+    #   weight: 3
+    # - identifier: dropdown1
+    #   title: example dropdown 1
+    #   name: example 1
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 1
+    # - identifier: dropdown2
+    #   title: example dropdown 2
+    #   name: example 2
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 2
+
+params:
+  title: "Serizawa's Portfolio"
+  description: Text about my cool site
+  # staticPath: ""  # The path to serve the static files from
+  favicon: "/images/sweater.jpg"
+
+  # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
+  # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
+  # Note the lack of "" in true, it should be of boolean type.
+  useBootstrapCDN: false
+
+  # If you want to load dynamically responsive images from Cloudinary
+  # This requires your images to be uploaded + hosted on Cloudinary
+  # Uncomment and change YOUR_CLOUD_NAME to the Cloud Name in your Cloudinary console
+  # cloudinary_cloud_name: "YOUR_CLOUD_NAME"
+
+  # Whether to add mathjax support on all pages. Alternatively, you can opt-in per page by adding `mathjax: true` in the frontmatter.
+  mathjax: false
+
+  # Whether the fade animations on the home page will be enabled
+  animate: true
+
+  theme:
+    # disableThemeToggle: true
+    # defaultTheme: "light" # dark
+
+  font:
+    fontSize: 1rem # default: 1rem
+    fontWeight: 400 # default: 400
+    lineHeight: 1.5 # default: 1.5
+    textAlign: left # default: left
+
+  # color preference
+  # When using hex codes for colors, quotations must be used along with the # sign
+  # color:
+  #   textColor: "#343a40"
+  #   secondaryTextColor: "#6c757d"
+  #   textLinkColor: "#007bff"
+  #   backgroundColor: "#eaedf0"
+  #   secondaryBackgroundColor: "#64ffda1a"
+  #   primaryColor: "#007bff"
+  #   secondaryColor: "#f8f9fa"
+
+  #   darkmode:
+  #     textColor: "#e4e6eb"
+  #     secondaryTextColor: "#b0b3b8"
+  #     textLinkColor: "#ffffff"
+  #     backgroundColor: "#18191a"
+  #     secondaryBackgroundColor: "#212529"
+  #     primaryColor: "#ffffff"
+  #     secondaryColor: "#212529"
+
+  # If you want to customize the menu, you can change it here
+  navbar:
+    align: ms-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
+    # brandLogo: "/logo.png" # Logo for the brand | default is the favicon variable
+    # showBrandLogo: false # Show brand logo in nav bar | default is true
+    brandName: "Serizawa's Portfolio" # Brand name for the brand | default is the title variable
+    disableSearch: false
+    # searchPlaceholder: "Search"
+    stickyNavBar:
+      enable : true
+      showOnScrollUp : true
+    enableSeparator: false
+    menus:
+      disableAbout: false
+      disableExperience: false
+      disableEducation: false
+      disableProjects: false
+      disableAchievements: false
+      disableContact: false
+
+  # Hero
+  hero:
+    enable: true
+    intro: "Hi, my name is"
+    title: "Tatsuki Serizawa"
+    # subtitle: "I build things for the web"
+    content: "芹澤龍生のポートフォリオです."
+    image: /images/sweater.jpg
+    bottomImage:
+      enable: false
+    # roundImage: true # Make hero image circular | default false
+    # button:
+    #   enable: true
+    #   name: "Resume"
+    #   url: "#"
+    #   download: true
+    #   newPage: false
+    socialLinks:
+      fontAwesomeIcons:
+        - icon: fab fa-github
+          url: https://github.com/TatsukiSerizawa
+        - icon: fab fa-x-twitter
+          url: https://x.com/seri_datasci
+      customIcons:
+        - icon: /images/qiita-icon.png
+          url: https://qiita.com/t_serizawa
+      customIcons2:
+        - icon: /images/zenn-icon.svg
+          url: https://zenn.dev/seri_datasci
+  
+  # About
+  about:
+    enable: true
+    title: "About Me"
+    image: "/images/seri.jpg"
+    content: |-
+      データサイエンティスト・AIエンジニアとして，機械学習やLLMを活用した分析・開発に取り組んでいます．また，最近は DevRelと呼ばれるような技術広報活動にも取り組んでいます．
+      業務外では，LLMを活用したAIエージェントやHuman Agent Interaction (HAI) に興味があります．
+
+      I work on development using machine learning and generative AI. I am also involved in DevRel activities. Outside of work, I am interested in AI agents and Human Agent Interaction (HAI) using LLM.
+
+    skills:
+      enable: true
+      title: "これまで取り扱ってきた技術:"
+      items:
+        - "音声認識"
+        - "画像認識"
+        - "自然言語処理"
+        - "テーブルデータ分析"
+        - "生存時間分析"
+        - "大規模言語モデル"
+        - "Webアプリ開発 (Django)"
+
+  # Experience
+  experience:
+    enable: true
+    # title: "Custom Name"
+    items:
+      - job: "Data Scientist"
+        company: "ARISE analytics"
+        companyUrl: "https://www.ariseanalytics.com/"
+        date: "Oct 2022 - present"
+        featuredLink:
+          enable: false
+          name: "View the project"
+          url: "https://example.com"
+        content: |
+          データサイエンティストとして，大規模データ分析や効果検証，LLMを活用したアプリケーション開発などを行っています．加えて，DevRelと呼ばれるような技術広報活動のリードもしています．
+
+          主なアウトプット:
+          
+          - [(学会) LLMエージェントの人間との対話における反芻的返答の親近感向上効果, 2024.](https://www.jstage.jst.go.jp/article/pjsai/JSAI2024/0/JSAI2024_3Xin255/_article/-char/ja)
+          - [(登壇) データアナリティクスセミナー in 岩手県立大学, 2024.](https://note.ariseanalytics.com/n/nf8b8cf6f7b26?gs=341da32cc72b)
+          - [(TechBlog)【JSAI2024】「LLM エージェントの人間との対話における 反芻的返答の親近感向上効果」についてポスター発表しました, 2024.](https://www.ariseanalytics.com/activities/report/20240619/)
+          - [(TechBlog) LLM時代に人は対話AIを信頼できるか？Human Agent Interactionの視点から考える, 2023.](https://www.ariseanalytics.com/activities/report/20230920-2/)
+          - [(TechBlog) RAG (Retrieval Augmented Generation) を活用！LLMで外部データを参照する方法を解説, 2023.](https://www.ariseanalytics.com/activities/report/20230818-2/)
+
+          その他:
+
+          - [(主催) LLM勉強会, 2024~](https://connpass.com/user/ariseanalytics/open/)
+
+      - job: "AI Engineer"
+        company: "Welmo"
+        companyUrl: "https://welmo.co.jp/"
+        date: "Jun 2021 - Sep 2022"
+        featuredLink:
+          enable: false
+          url: "https://example.com"
+        content: |
+          AIエンジニアとして，主に自然言語処理を用いた介護現場向けのAIシステム開発に従事しました．
+
+          主なアウトプット:
+
+          - [(学会): Optimization of Convolutional Neural Network Using the Linearly Decreasing Weight Particle Swarm Optimization, 2022.](https://www.jstage.jst.go.jp/article/pjsai/JSAI2022/0/JSAI2022_2S4IS2b03/_article/-char/ja/)
+
+      - job: "SRE Engineer"
+        company: "Fujitsu Cloud Technologies"
+        companyUrl: "https://fjct.fujitsu.com/"
+        date: "Aip 2020 - May 2021"
+        info:
+          enable: false
+        featuredLink:
+          enable: false
+          url: "https://example.com"
+        content: SREエンジニアとして，自社開発しているクラウドの構築・運用業務に取り組みました．
+
+
+  # Education
+  education:
+    enable: true
+    # title: "Custom Name"
+    index: false
+    items:
+      - title: "ソフトウェア情報学 (修士) | Master of Science in Software and Information Science"
+        school:
+          name: "岩手県立大学大学院"
+          url: "https://www.soft.iwate-pu.ac.jp/gradschool/"
+        date: "2018 - 2020"
+        # GPA: "3.8 out of 5.0"
+        content: |-
+          藤田研究室: 知能システムに関する研究室で，脳波を画像に変換したものに対する感情認識に関する研究に取り組みました．
+            - [(学会) Emotion Recognition by Convolutional Neural Network Based on EEG-Images Plotting Time Series Data, 2019.](https://ebooks.iospress.nl/volumearticle/52677)
+      - title: "ソフトウェア情報学 (学士) | Bachelor of Science in Software and Information Science"
+        school:
+          name: "岩手県立大学"
+          url: "https://www.soft.iwate-pu.ac.jp/"
+        date: "2016 - 2018"
+        # GPA: "3.9 out of 5.0"
+        content: |-
+          伊藤研究室: 音声認識に関する研究室で，特定話者による音声認識システムの精度向上について研究しました．
+
+  # Achievements
+  achievements:
+    enable: true
+    # title: "Custom Name"
+    items:
+      - title: SIGNATE Expert
+        content: 国内向けデータ分析コンペサイトのSIGNATEで開催されているコンペにおいて，複数のメダルを獲得しています．
+        url: https://signate.jp/users/20983
+        # image: /images/achievment.jpg
+      - title: Qiita
+        content: Organizationと紐づく技術アウトプットはQiitaに記載しています．
+        url: https://qiita.com/t_serizawa
+        image: /images/qiita-icon.png
+      - title: Zenn
+        content: 個人で書いている技術アウトプットはZennに記載しています．
+        url: https://zenn.dev/seri_datasci
+        image: /images/zenn-icon.svg
+
+  # # projects
+  # projects:
+  #   enable: true
+  #   # title: "Custom Name"
+  #   items:
+  #     - title: Hugo Profile
+  #       content: A highly customizable and mobile first Hugo template for personal portfolio and blog.
+  #       image: /images/projects/profile.png
+  #       featured:
+  #         name: Demo
+  #         link: https://hugo-profile.netlify.app
+  #       badges:
+  #         - "Hugo"
+  #         - "Bootstrap"
+  #         - "Javascript"
+  #       links:
+  #         - icon: fa fa-envelope
+  #           url: mailto:?subject=Hugo%20Profile%20Template&body=Check%20it%20out:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f
+  #         - icon: fab fa-github
+  #           url: https://github.com/gurusabarish/hugo-profile
+  #         - icon: fab fa-twitter
+  #           url: https://twitter.com/intent/tweet?text=Check+it+out:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile
+
+  #     - title: Image Converter
+  #       content: A web app to convert image to pdf, png to jpg, png to jpg and png to webp without database using django.
+  #       image: /images/projects/converter.jpg
+  #       featured:
+  #         name: Demo
+  #         link: https://django-converter.herokuapp.com
+  #       badges:
+  #         - "Django"
+  #         - "Bootstrap"
+  #       links:
+  #         - icon: fab fa-github
+  #           url: https://github.com/gurusabarish/converter
+
+  #     - title: Hugo Profile V2
+  #       content: A clean and simple Hugo template for personal portfolio and blog.
+  #       image: /images/projects/profile2.jpg
+  #       featured:
+  #         name: Demo V2
+  #         link: https://hugo-profile-2.netlify.app
+  #       badges:
+  #         - "Hugo"
+  #         - "Bootstrap"
+  #         - "Javascript"
+  #       links:
+  #         - icon: fab fa-github
+  #           url: https://github.com/gurusabarish/HugoProfileV2
+
+  #Contact
+  contact:
+    enable: true
+    # title: "Custom Name"
+    content: | 
+      X (Twitter), Linkedin, Mailなどでいつでもお声がけください．
+
+      [mail] iputatsuki@gmail.com
+    # btnName: Mail me
+    # btnLink: mailto:gurusabarisha@gmail.com
+    # formspree:
+    #   enable: true # `contact.email` value will be ignored
+    #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
+    #   emailCaption: "Enter your email address"
+    #   messageCaption: "Enter your message here"
+    #   messageRows: 5
+
+  footer:
+    recentPosts:
+      path: "blogs"
+      count: 3
+      title: Recent Posts
+      enable: true
+      disableFeaturedImage: false
+    socialNetworks:
+      github: https://github.com/TatsukiSerizawa
+      linkedin: https://linkedin.com/in/tatsuki-serizawa
+      twitter: https://x.com/seri_datasci
+      facebook: https://facebook.com/tatukiserizawa
+
+  # List pages like blogs and posts
+  listPages:
+    disableFeaturedImage: false
+
+  # Single pages like blog and post
+  singlePages:
+    socialShare: true
+    readTime:
+      enable: true
+      content: "min read"
+    scrollprogress:
+      enable: true
+    tags:
+      openInNewTab: true
+
+  # For translations
+  terms:
+    read: "Read"
+    toc: "Table Of Contents"
+    copyright: "All rights reserved"
+    pageNotFound: "Page not found"
+    emailText: "Check out this site"
+
+  datesFormat:
+    article: "Jan 2, 2006"
+    articleList: "Jan 2, 2006"
+    articleRecent: "Jan 2, 2006"
+
+  #customScripts: -| # You can add custom scripts which will be added before </body> tag
+  #  <script type="text/javascript"><!-- any script here --></script>
